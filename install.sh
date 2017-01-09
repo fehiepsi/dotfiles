@@ -38,8 +38,8 @@ source deactivate
 
 # install other python libraries
 source activate pydata
-conda install future seaborn opencv h5py
-conda install -c conda-forge tqdm
+conda install future seaborn opencv h5py cython joblib
+conda install -c conda-forge tqdm librosa
 pip install xgboost
 source deactivate
 
