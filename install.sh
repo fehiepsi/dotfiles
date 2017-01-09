@@ -1,5 +1,5 @@
 # install useful packages
-sudo apt install git vim tmux unzip tree
+sudo apt install git vim tmux unzip tree openssh
 
 # git configuration
 git config --global user.name "fehiepsi"
@@ -12,6 +12,14 @@ cp linux-scripts/bash_aliases ~/.bash_aliases
 cp linux-scripts/vimrc ~/.vimrc
 cp linux-scripts/tmux.conf ~/.tmux.conf
 source ~/.bashrc
+
+# install slimux
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -Lo ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+cd ~/Downloads
+curl -Lo slimux-master.zip https://github.com/epeli/slimux/archive/master.zip
+unzip slimux-master.zip
+mv slimux-master ~/.vim/bundle/slimux
 
 # install conda and pydata stack
 cd ~/Downloads
