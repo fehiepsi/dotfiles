@@ -19,10 +19,7 @@ curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
 conda update conda
-conda create -n pydata
-source activate pydata
-conda install jupyter matplotlib pandas scikit-learn nose
-source deactivate
+conda create -n pydata jupyter matplotlib pandas scikit-learn nose
 
 # install notebook extensions
 source activate pydata
