@@ -16,7 +16,7 @@ source ~/.bashrc
 # install conda and pydata stack
 cd ~/Downloads
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-MacOSX-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
 conda update conda
 conda create -n pydata
