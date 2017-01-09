@@ -1,62 +1,86 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+source $VIMRUNTIME/vimrc_example.vim
+colorscheme zellner
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+"from tobit
+set nu "number lines
+"source $VIMRUNTIME/colors/fu.vim "colour theme not scheme
+"source $VIMRUNTIME/colors/blazer.vim "colour theme not scheme
+set mouse=a "mouse functionality (like gvim!)
+set tw=10000 "no wrapping text onto the next line
+set listchars+=precedes:<,extends:> "when nowrap is set-has carroots when a line extends beyond the edge
+syntax on "colours!
+set backspace=indent,eol,start "makes backspace work in Vim 7.3
+set hls "highlighting!
+set ruler "for cursor position in the bottom right corner
+set incsearch "search begins as soon as you start typing instead of waiting for <ENTER>
+set ai! "auto indent
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,resize
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+set expandtab "no tab characters, spaces instead except with makefiles
+autocmd BufReadPost,FileReadPost,BufNewFile [Mm]ake{file,} setlocal noexpandtab
 
-" Plugin for Scala syntax highlight
-Plugin 'derekwyatt/vim-scala'
-Plugin 'altercation/vim-colors-solarized'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-set hlsearch
-set tags=tags;/
+"more tabs for my python style
+au BufRead,BufNewFile *.py set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smarttab
 
-let python_highlight_all = 1
-set splitright
-set splitbelow
-syntax enable
-let g:solarized_termtrans = 256
-set background=dark
-colorscheme solarized
+"==================================================
+"rebinds
+"==================================================
+"traverse ?buffer? instead of line
+"nnoremap gk k
+"nnoremap gj j
+"nnoremap k gk
+"nnoremap j gj
 
-set statusline+=%F
-set statusline+=%=	"left/right separator
-set statusline+=%c,	"cursor column
-set statusline+=%l/%L	"cursor line/total lines
-set statusline+=\ %P	"percent through file
-set laststatus=2
-autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+"scroll buffer with better names
+"nnoremap <C-J> <C-E>
+"nnoremap <C-K> <C-Y>
+"vnoremap <C-J> <C-E>
+"vnoremap <C-K> <C-Y>
+
+"change tabs directionaly with ^h and ^l
+nnoremap <C-h> gT
+nnoremap <C-l> gt
+
+"stretch buffers
+"nnoremap + <C-W>+
+"nnoremap - <C-W>-
+
+"alternate keys for indenting/unindenting
+inoremap <S-Tab> <C-O><LT><LT>
+nnoremap <Tab> >>
+nnoremap <S-Tab> <LT><LT>j
+vnoremap <Tab> >
+vnoremap <S-Tab> <LT>
+
+"rebind for space: prime real estate wasted by default
+nnoremap <Space> <ESC>
+
+"highlighting extra whitespace from max
+hi def link whiteSpaceError Error
+autocmd Syntax * syn match whiteSpaceError "\(\S\| \)\@<=\t\+"
+autocmd Syntax * syn match whiteSpaceError "\s\+\%#\@<!$"
+
+"pathogen vim modules stuff
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+"fugitive.vim
+nnoremap <C-g>c :Gcommit
+nnoremap <C-g>a :Gwrite
+
+"slimux
+"I have this built into the script, which is not
+"what the original has
+nnoremap <C-c><C-c> :SlimuxREPLSendLine<CR>
+vnoremap <C-c><C-c> :SlimuxREPLSendLine<CR>
+nnoremap <C-c><C-v> :SlimuxREPLConfigure<CR>
+
+"paste formatted time
+nnoremap t "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
+
