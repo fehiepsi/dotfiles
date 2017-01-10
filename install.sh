@@ -17,7 +17,7 @@ source ~/.bashrc
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -Lo ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cd ~/Downloads
-curl -Lo slimux-master.zip https://github.com/epeli/slimux/archive/master.zip
+curl -Lo slimux-master.zip https://github.com/fehiepsi/slimux/archive/master.zip
 unzip slimux-master.zip
 mv slimux-master ~/.vim/bundle/slimux
 
