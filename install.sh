@@ -13,13 +13,17 @@ cp linux-scripts/vimrc ~/.vimrc
 cp linux-scripts/tmux.conf ~/.tmux.conf
 source ~/.bashrc
 
-# install slimux
+# install slimux and fugitive
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -Lo ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cd ~/Downloads
 curl -Lo slimux-master.zip https://github.com/fehiepsi/slimux/archive/master.zip
 unzip slimux-master.zip
 mv slimux-master ~/.vim/bundle/slimux
+curl -Lo vim-fugitive-master.zip https://github.com/tpope/vim-fugitive/archive/master.zip
+unzip vim-fugitive-master.zip
+mv vim-fugitive-master ~/.vim/bundle/vim-fugitive
+vim -u NONE -c "helptags ~/.vim/bundle/vim-fugitive/doc" -c q
 
 # install conda and pydata stack
 cd ~/Downloads
