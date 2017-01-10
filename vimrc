@@ -80,6 +80,8 @@ nnoremap <C-g>a :Gwrite
 nnoremap <C-c><C-c> :SlimuxREPLSendLine<CR>
 vnoremap <C-c><C-c> :SlimuxREPLSendLine<CR>
 nnoremap <C-c><C-v> :SlimuxREPLConfigure<CR>
+let g:slimux_select_from_current_window = 1
+let g:slimux_python_ipython = 1
 
 "paste formatted time
 nnoremap t "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
