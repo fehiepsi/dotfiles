@@ -8,7 +8,12 @@ alias ..='cd ..'
 alias cd..='cd ..'
 alias proj='cd ~/Projects'
 alias dl='cd ~/Downloads'
-alias gitmy='cd ~/Downloads/linux-scripts && cp ~/.bash_aliases bash_aliases && git add . && git commit -m "update aliases" && git push origin master' 
+alias gitmy='cd ~/Downloads/linux-scripts &&
+    cp ~/.bash_aliases bash_aliases &&
+    git add . &&
+    git commit -m "update aliases" &&
+    git push origin master &&
+    cd -' 
 
 alias pydata='source activate pydata'
 alias pyexit='source deactivate'
