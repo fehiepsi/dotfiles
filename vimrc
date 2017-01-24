@@ -78,7 +78,7 @@ nnoremap <C-g>a :Gwrite
 "I have this built into the script, which is not
 "what the original has
 nnoremap <C-c><C-c> :SlimuxREPLSendLine<CR>
-vnoremap <C-c><C-c> :SlimuxREPLSendLine<CR>
+vnoremap <C-c><C-c> :SlimuxREPLSendSelection<CR>
 nnoremap <C-c><C-v> :SlimuxREPLConfigure<CR>
 let g:slimux_select_from_current_window = 1
 let g:slimux_python_ipython = 1

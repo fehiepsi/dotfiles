@@ -13,11 +13,14 @@ alias gitmy='cd ~/Downloads/linux-scripts &&
     git add . &&
     git commit -m "update aliases" &&
     git push origin master &&
-    cd -' 
+    cd -'
 
+alias superset='cd ~/Projects/superset &&
+    source activate superset'
 alias pydata='source activate pydata'
+alias torch='source activate torch'
 alias pyexit='source deactivate'
-alias nb='jupyter notebook'
+alias nb='jupyter notebook --no-browser'
 
 alias cpu='top'
 alias ram='top -o %MEM'
@@ -27,3 +30,4 @@ alias rmsw='rm .*.sw[pon] ..*.sw[pon]'
 
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 export CUDA_HOME=/usr/local/cuda
+export PS1="$PS1\n$ "
