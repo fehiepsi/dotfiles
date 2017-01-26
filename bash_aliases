@@ -25,9 +25,10 @@ alias nb='jupyter notebook --no-browser'
 alias cpu='top'
 alias ram='top -o %MEM'
 alias gpu='watch nvidia-smi'
+alias fan='DRI_PRIME=1 glxinfo | grep "OpenGL renderer"'
 
 alias rmsw='rm .*.sw[pon] ..*.sw[pon]'
 
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 export CUDA_HOME=/usr/local/cuda
-export PS1="$PS1\n$ "
+

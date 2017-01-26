@@ -1,5 +1,5 @@
 # install useful packages
-sudo apt install git vim tmux unzip tree openssh
+sudo apt install git vim-gnome tmux unzip tree openssh
 
 # git configuration
 git config --global user.name "fehiepsi"
@@ -31,19 +31,18 @@ curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
 conda update conda
-conda create -n pydata jupyter matplotlib pandas scikit-learn nose
+conda config --append channels conda-forge
+conda create -n pydata python=3.5 jupyter matplotlib pandas scikit-learn nose
 
 # install notebook extensions
 source activate pydata
-conda install ipdb line_profiler pivottablejs qgrid psutil
-conda install -c conda-forge pandas-profiling jupyter_contrib_nbextensions
+conda install ipdb line_profiler pivottablejs qgrid pandas-profiling jupyter_contrib_nbextensions
 conda install -c damianavila82 rise
 source deactivate
 
 # install other python libraries
 source activate pydata
-conda install future seaborn opencv h5py cython joblib
-conda install -c conda-forge tqdm librosa
+conda install anaconda-client future seaborn opencv librosa tqdm
 pip install xgboost
 source deactivate
 
@@ -68,7 +67,14 @@ sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 source activate pydata
 pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-linux_x86_64.whl
-pip install Theano keras
+conda install Theano keras
+conda install -c soumith pytorch torchvision cuda80
+source deactivate
+
+# install gym
+source activate pydata
+conda install pyglet requests pillow pyopengl imageio olefile
+pip install gym[all]
 source deactivate
 
 # install MongoDB (optional)
