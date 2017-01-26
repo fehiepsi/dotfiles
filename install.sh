@@ -67,7 +67,8 @@ sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 source activate pydata
 pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-linux_x86_64.whl
-conda install Theano keras
+conda install theano h5py
+pip install keras
 conda install -c soumith pytorch torchvision cuda80
 source deactivate
 

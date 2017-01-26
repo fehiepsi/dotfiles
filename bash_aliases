@@ -17,8 +17,10 @@ alias gitmy='cd ~/Downloads/linux-scripts &&
 
 alias superset='cd ~/Projects/superset &&
     source activate superset'
-alias pydata='source activate pydata'
-alias torch='source activate torch'
+alias pydata='cd ~/Projects &&
+    source activate pydata'
+alias pytorch='cd ~/Projects/torch &&
+    source activate torch'
 alias pyexit='source deactivate'
 alias nb='jupyter notebook --no-browser'
 
