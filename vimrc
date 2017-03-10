@@ -1,88 +1,47 @@
 source $VIMRUNTIME/vimrc_example.vim
 colorscheme zellner
 
-"from tobit
-set nu "number lines
-"source $VIMRUNTIME/colors/fu.vim "colour theme not scheme
-"source $VIMRUNTIME/colors/blazer.vim "colour theme not scheme
-set mouse=a "mouse functionality (like gvim!)
-set tw=10000 "no wrapping text onto the next line
-set listchars+=precedes:<,extends:> "when nowrap is set-has carroots when a line extends beyond the edge
-syntax on "colours!
-set backspace=indent,eol,start "makes backspace work in Vim 7.3
-set hls "highlighting!
-set ruler "for cursor position in the bottom right corner
-set incsearch "search begins as soon as you start typing instead of waiting for <ENTER>
-set ai! "auto indent
+" Number
+set nu
 
-set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,resize
+" Text width
+set colorcolumn=79
 
-set expandtab "no tab characters, spaces instead except with makefiles
-autocmd BufReadPost,FileReadPost,BufNewFile [Mm]ake{file,} setlocal noexpandtab
+" Search
+set hls incsearch
 
-"more tabs for my python style
-au BufRead,BufNewFile *.py set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set smarttab
+" Tab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
-"==================================================
-"rebinds
-"==================================================
-"traverse ?buffer? instead of line
-"nnoremap gk k
-"nnoremap gj j
-"nnoremap k gk
-"nnoremap j gj
+" Highlight extra whitespaces
+set list listchars=trail:.
 
-"scroll buffer with better names
-"nnoremap <C-J> <C-E>
-"nnoremap <C-K> <C-Y>
-"vnoremap <C-J> <C-E>
-"vnoremap <C-K> <C-Y>
-
-"change tabs directionaly with ^h and ^l
-nnoremap <C-h> gT
-nnoremap <C-l> gt
-
-"stretch buffers
-"nnoremap + <C-W>+
-"nnoremap - <C-W>-
-
-"alternate keys for indenting/unindenting
-inoremap <S-Tab> <C-O><LT><LT>
-nnoremap <Tab> >>
-nnoremap <S-Tab> <LT><LT>j
-vnoremap <Tab> >
-vnoremap <S-Tab> <LT>
-
-"rebind for space: prime real estate wasted by default
-nnoremap <Space> <ESC>
-
-"highlighting extra whitespace from max
-hi def link whiteSpaceError Error
-autocmd Syntax * syn match whiteSpaceError "\(\S\| \)\@<=\t\+"
-autocmd Syntax * syn match whiteSpaceError "\s\+\%#\@<!$"
-
-"pathogen vim modules stuff
+" pathogen
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-"fugitive.vim
+" fugitive
 nnoremap <C-g>c :Gcommit
 nnoremap <C-g>a :Gwrite
 
-"slimux
-"I have this built into the script, which is not
-"what the original has
+" slimux
 nnoremap <C-c><C-c> :SlimuxREPLSendLine<CR>
 vnoremap <C-c><C-c> :SlimuxREPLSendSelection<CR>
 nnoremap <C-c><C-v> :SlimuxREPLConfigure<CR>
 let g:slimux_select_from_current_window = 1
 let g:slimux_python_ipython = 1
 
-"paste formatted time
-nnoremap t "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
+" Search down into subfolders
+set path+=**
+" Display all matching files when we tab complete
+set wildmenu
+
+" Tweaks for browsing
+let g:netrw_banner=0        " disable annoying banner
+let g:netrw_browse_split=4  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 

@@ -56,7 +56,10 @@ source deactivate
 conda create -n r -c r r-essentials
 
 # install deep learning stack
-sudo apt-get install gcc libcupti-dev 
+sudo apt-get install gcc libcupti-dev
+# add the following export to ~/.bashrc file
+# export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+# export CUDA_HOME=/usr/local/cuda
 cd ~/Downloads
 curl -LO https://developer.nvidia.com/compute/cuda/8.0/prod/local_installers/cuda_8.0.44_linux-run
 sudo sh cuda_8.0.44_linux.run # ignore driver and samples
@@ -66,7 +69,7 @@ sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 source activate pydata
-pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-linux_x86_64.whl
+pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.0.1-cp35-cp35m-linux_x86_64.whl
 conda install theano h5py
 pip install keras
 conda install -c soumith pytorch torchvision cuda80
