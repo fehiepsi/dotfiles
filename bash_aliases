@@ -8,19 +8,14 @@ alias ..='cd ..'
 alias cd..='cd ..'
 alias proj='cd ~/Projects'
 alias dl='cd ~/Downloads'
-alias gitmy='cd ~/Downloads/linux-scripts &&
-    cp ~/.bash_aliases bash_aliases &&
+alias gitmy='cd ~/github/linux-scripts &&
     git add . &&
     git commit -m "update aliases" &&
     git push origin master &&
     cd -'
 
-alias superset='cd ~/Projects/superset &&
-    source activate superset'
-alias pydata='cd ~/Projects &&
-    source activate pydata'
-alias pytorch='cd ~/Projects/torch &&
-    source activate torch'
+alias pydata='source activate pydata'
+alias pydev='source activate pydev'
 alias pyexit='source deactivate'
 alias nb='jupyter notebook --no-browser'
 

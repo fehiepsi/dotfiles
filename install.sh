@@ -1,29 +1,29 @@
 # install useful packages
-sudo apt install git vim-gnome tmux unzip tree openssh
+sudo apt install git vim tmux unzip tree openssh
 
 # git configuration
 git config --global user.name "fehiepsi"
 git config --global user.email "fehiepsi@gmail.com"
 
 # copy config files
-cd ~/Downloads
+cd ~/github
+cwd=$PWD
 git clone https://github.com/fehiepsi/linux-scripts.git
-cp linux-scripts/bash_aliases ~/.bash_aliases
-cp linux-scripts/vimrc ~/.vimrc
-cp linux-scripts/tmux.conf ~/.tmux.conf
+ln -s $cwd/linux-scripts/bash_aliases ~/.bash_aliases
+ln -s $cwd/linux-scripts/vimrc ~/.vimrc
+ln -s $cwd/linux-scripts/tmux.conf ~/.tmux.conf
 source ~/.bashrc
+cd -
 
-# install slimux and fugitive
+# install slimux, fugitive, surround, auto-pairs, supertab
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -Lo ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cd ~/Downloads
-curl -Lo slimux-master.zip https://github.com/fehiepsi/slimux/archive/master.zip
-unzip slimux-master.zip
-mv slimux-master ~/.vim/bundle/slimux
-curl -Lo vim-fugitive-master.zip https://github.com/tpope/vim-fugitive/archive/master.zip
-unzip vim-fugitive-master.zip
-mv vim-fugitive-master ~/.vim/bundle/vim-fugitive
-vim -u NONE -c "helptags ~/.vim/bundle/vim-fugitive/doc" -c q
+git clone https://github.com/fehiepsi/slimux.git ~/.vim/bundle/slimux
+git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
+git clone https://github.com/tpope/vim-surround.git ~/.vim/bundle/vim-surround
+git clone https://github.com/ervandew/supertab.git ~/.vim/bundle/supertab
+git clone https://github.com/jiangmiao/auto-pairs ~/.vim/bundle/auto-pairs
 
 # install conda and pydata stack
 cd ~/Downloads
@@ -53,7 +53,7 @@ pip install sacred hyperopt
 source deactivate
 
 # install R kernel (optional)
-conda create -n r -c r r-essentials
+#conda create -n r -c r r-essentials
 
 # install deep learning stack
 sudo apt-get install gcc libcupti-dev
