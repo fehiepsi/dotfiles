@@ -1,19 +1,17 @@
 # install useful packages
-sudo apt install git vim tmux unzip tree openssh
+sudo apt install git vim tmux unzip openssh
 
 # git configuration
 git config --global user.name "fehiepsi"
 git config --global user.email "fehiepsi@gmail.com"
 
 # copy config files
-cd ~/github
-cwd=$PWD
+cd ~/Documents
 git clone https://github.com/fehiepsi/linux-scripts.git
-ln -s $cwd/linux-scripts/bash_aliases ~/.bash_aliases
-ln -s $cwd/linux-scripts/vimrc ~/.vimrc
-ln -s $cwd/linux-scripts/tmux.conf ~/.tmux.conf
+ln -s $PWD/linux-scripts/bash_aliases ~/.bash_aliases
+ln -s $PWD/linux-scripts/vimrc ~/.vimrc
+ln -s $PWD/linux-scripts/tmux.conf ~/.tmux.conf
 source ~/.bashrc
-cd -
 
 # install slimux, fugitive, surround, auto-pairs, supertab
 mkdir -p ~/.vim/autoload ~/.vim/bundle
@@ -32,7 +30,7 @@ bash Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
 conda update conda
 conda config --append channels conda-forge
-conda create -n pydata python=3.5 jupyter matplotlib pandas scikit-learn nose
+conda create -n pydata python=3.5 jupyter matplotlib pandas scikit-learn
 
 # install notebook extensions
 source activate pydata
