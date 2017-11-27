@@ -153,7 +153,8 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    let g:solarized_termcolors=256
+    colorscheme solarized
 catch
 endtry
 
@@ -199,6 +200,7 @@ set tabstop=4
 " Linebreak on 500 characters
 set lbr
 set tw=500
+
 set colorcolumn=100
 
 set ai "Auto indent
