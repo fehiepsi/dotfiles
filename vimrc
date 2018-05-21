@@ -139,7 +139,10 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+"    colorscheme desert
+    let g:solarized_termcolors=256
+    colorscheme solarized
+    set colorcolumn=100
 catch
 endtry
 
