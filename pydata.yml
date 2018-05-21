@@ -1,0 +1,26 @@
+name: pydata
+channels:
+  - pytorch
+dependencies:
+  - python=3.5
+  - dash
+  - fire
+  - flask
+  - jupyterlab
+  - librosa
+  - lxml
+  - matplotlib
+  - nikola
+  - numpy
+  - pandas
+  - pillow
+  - plotly
+  - pytest
+  - pytorch
+  - scikit-learn
+  - snakeviz
+  - spacy
+  - sqlalchemy
+  - tqdm
+  - pip:
+    - pyro-ppl
