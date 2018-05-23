@@ -18,8 +18,9 @@ sudo apt install git tmux vim putty
 
 ### setup git
 ```sh
-git config --global user.name "fehiepsi"
-git config --global user.email "fehiepsi@gmail.com"
+git config --global user.name 'fehiepsi'
+git config --global user.email 'fehiepsi@gmail.com'
+git config --global credential.helper 'cache --timeout=3600'
 ```
 
 ### dotfiles
