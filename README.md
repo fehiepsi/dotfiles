@@ -52,3 +52,8 @@ conda install jupyterlab
 jupyter notebook password
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 ```
+
+### install obs-studio
+```sh
+sudo apt install obs-studio
+```
