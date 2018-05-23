@@ -11,7 +11,7 @@ sudo apt purge firefox
 sudo apt install chromium-browser
 ```
 
-### useful packages
+### useful apps
 ```sh
 sudo apt install git tmux vim putty
 ```
@@ -22,7 +22,7 @@ git config --global user.name "fehiepsi"
 git config --global user.email "fehiepsi@gmail.com"
 ```
 
-### config files
+### dotfiles
 ```sh
 cd ~
 git clone https://github.com/fehiepsi/linux-scripts.git
@@ -43,7 +43,6 @@ conda env create -n pydata python=3.6
 
 ### python packages
 ```sh
-source activate pydata
 conda install jupyterlab
 ```
 
