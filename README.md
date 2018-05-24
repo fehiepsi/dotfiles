@@ -14,6 +14,10 @@ sudo apt install chromium-browser
 ### useful apps
 ```sh
 sudo apt install git tmux vim putty
+sudo apt install obs-studio
+sudo apt install goldendict
+sudo apt install gnome-tweak-tool
+sudo apt install chrome-gnome-shell
 ```
 
 ### setup git
@@ -49,11 +53,7 @@ conda install jupyterlab
 
 ### setup jupyter
 ```sh
+jupyter notebook --generate-config
 jupyter notebook password
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
-```
-
-### install obs-studio
-```sh
-sudo apt install obs-studio
 ```
