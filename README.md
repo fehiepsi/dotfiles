@@ -5,20 +5,11 @@
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 ```
 
-### remove firefox, install chromium
-```sh
-sudo apt purge firefox
-sudo apt install chromium-browser chrome-gnome-shell
-```
-
 ### useful apps
 ```sh
-sudo apt install tmux vim make gcc
-sudo apt install putty
-sudo apt install vlc
-sudo apt install obs-studio
+sudo apt install ibus-unikey vim tmux
+sudo apt install vlc obs-studio
 sudo apt install goldendict
-sudo apt install gnome-tweak-tool
 ```
 
 ### setup git
@@ -35,9 +26,9 @@ git config --global user.email 'fehiepsi@gmail.com'
 ```sh
 cd ~
 git clone https://github.com/fehiepsi/linux-scripts.git
-ln -s $PWD/linux-scripts/bash_aliases ~/.bash_aliases
-ln -s $PWD/linux-scripts/vimrc ~/.vimrc
-ln -s $PWD/linux-scripts/tmux.conf ~/.tmux.conf
+cp linux-scripts/bash_aliases .bash_aliases
+cp linux-scripts/vimrc .vimrc
+cp linux-scripts/tmux.conf .tmux.conf
 ```
 
 ### install conda
@@ -47,7 +38,7 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
 conda update conda
-conda env create -n pydata python=3.6
+conda env create -n pydata
 ```
 
 ### python packages
