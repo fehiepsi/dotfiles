@@ -49,6 +49,7 @@ jupyter labextension install @jupyter-widgets/jupyterlab-manager
 # edit ~/.jupyter/jupyter_notebook_config.py
 #   NotebookApp.iopub_data_rate_limit = 1000000000
 #   NotebookApp.iopub_msg_rate_limit = 1000000
+pip install nikola pymc3 pystan gpflow gpytorch
 ```
 
 ### r packages
