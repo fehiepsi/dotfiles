@@ -36,16 +36,19 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
 conda update conda
-conda create -n pydata python=3.6
 ```
 
 ### python packages
 ```sh
-conda create -n pydata python=3.6 jupyterlab nodejs pandas seaborn
+conda create -n pydata python=3.6 jupyterlab nodejs tensorflow-gpu
 pydata
+conda install -c pytorch pytorch cuda100
 jupyter notebook --generate-config
 jupyter notebook password
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
+# edit ~/.jupyter/jupyter_notebook_config.py
+#   NotebookApp.iopub_data_rate_limit = 1000000000
+#   NotebookApp.iopub_msg_rate_limit = 1000000
 ```
 
 ### r packages
