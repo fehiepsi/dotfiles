@@ -7,11 +7,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 ### useful apps
 ```sh
-sudo apt install gcc make
-sudo apt install tmux vim
-sudo apt install ibus-unikey
-sudo apt install obs-studio vlc
-sudo apt install goldendict
+sudo apt install gcc make tmux vim ibus-unikey obs-studio vlc goldendict
 ```
 
 ### setup git
@@ -45,12 +41,21 @@ conda create -n pydata python=3.6
 
 ### python packages
 ```sh
-conda install jupyterlab nodejs pandas seaborn
-```
-
-### setup jupyter
-```sh
+conda create -n pydata python=3.6 jupyterlab nodejs pandas seaborn
+pydata
 jupyter notebook --generate-config
 jupyter notebook password
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 ```
+
+### r packages
+```sh
+conda create -n r
+conda activate r
+conda install -c conda-forge jupyter r-irkernel r-rstan r-coda r-mvtnorm r-devtools
+sudo ln -s /bin/tar /bin/gtar
+R
+library(devtools)
+devtools::install_github("rmcelreath/rethinking")
+```
+

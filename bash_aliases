@@ -7,7 +7,7 @@ alias cpu='top'
 alias ram='top -o %MEM'
 alias gpu='watch nvidia-smi'
 
-alias pydata='source activate pydata'
+alias pydata='conda activate pydata'
 alias nb='jupyter notebook --no-browser'
 alias lab='jupyter lab --no-browser'
 
