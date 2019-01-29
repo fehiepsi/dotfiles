@@ -1,6 +1,7 @@
 alias sc='source ~/.bashrc'
 alias c='clear'
 alias cd..='cd ..'
+alias clean='find . -name .ipynb_checkpoints -prune -exec rm -r {} +'
 
 alias cpu='top'
 alias ram='top -o %MEM'

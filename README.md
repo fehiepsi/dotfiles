@@ -7,8 +7,10 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 ### useful apps
 ```sh
-sudo apt install ibus-unikey vim tmux
-sudo apt install vlc obs-studio
+sudo apt install gcc make
+sudo apt install tmux vim
+sudo apt install ibus-unikey
+sudo apt install obs-studio vlc
 sudo apt install goldendict
 ```
 
@@ -38,12 +40,12 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
 conda update conda
-conda env create -n pydata
+conda create -n pydata python=3.6
 ```
 
 ### python packages
 ```sh
-conda install jupyterlab
+conda install jupyterlab nodejs pandas seaborn
 ```
 
 ### setup jupyter
