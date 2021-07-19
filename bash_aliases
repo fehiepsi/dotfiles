@@ -3,6 +3,7 @@ alias c='clear'
 alias cd..='cd ..'
 alias clean='find . -name .ipynb_checkpoints -prune -exec rm -r {} +'
 alias cpu='top'
+alias gitrb="git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 alias gpu='watch nvidia-smi'
 alias lab='jupyter lab --no-browser'
 alias nb='jupyter notebook --no-browser'
