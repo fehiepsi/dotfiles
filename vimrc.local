@@ -1,8 +1,8 @@
 inoremap jk <Esc>
 set number
 set showtabline=1
-vnoremap <C-c> "+y
-nnoremap <leader>p "+p
+vnoremap <leader>c "+y
+nnoremap <leader>v "+p
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
   let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
