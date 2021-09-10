@@ -1,6 +1,8 @@
 inoremap jk <Esc>
 set number
+nnoremap <leader>n :set invnumber<CR>
 set showtabline=1
+set mouse=n
 vnoremap <leader>c "+y
 nnoremap <leader>v "+p
 if exists('$TMUX')
